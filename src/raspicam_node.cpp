@@ -917,7 +917,9 @@ int main(int argc, char **argv){
       ROS_INFO("Camera successfully calibrated");
   }
 
-  image_pub = n.advertise<sensor_msgs::CompressedImage>("image/compressed", 1);
+  image_transport::ImageTransport it(n);
+  //image_pub = n.advertise<sensor_msgs::CompressedImage>("image/compressed", 1);
+  image_pub = it.advertise("image", 1);
   camera_info_pub = n.advertise<sensor_msgs::CameraInfo>("camera_info", 1);
 
   dynamic_reconfigure::Server<raspicam_node::CameraConfig> server;
