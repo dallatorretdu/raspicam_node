@@ -82,6 +82,7 @@ int main(int argc, char **argv) {
 #include "interface/mmal/util/mmal_connection.h"
 
 #include "ros/ros.h"
+#include <image_transport/image_transport.h>
 #include "sensor_msgs/CompressedImage.h"
 #include "std_srvs/Empty.h"
 #include "sensor_msgs/CameraInfo.h"
