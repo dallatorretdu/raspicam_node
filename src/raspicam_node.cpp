@@ -315,7 +315,7 @@ static void encoder_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buf
 			    msg.header.seq = pData->frame;
 			    msg.header.frame_id = camera_frame_id;
 			    msg.header.stamp = ros::Time::now();
-			    msg.format = "jpg";
+			    msg.format = "jpeg";
 			    msg.data.insert( msg.data.end(), pData->buffer[pData->frame & 1], &(pData->buffer[pData->frame & 1][pData->id]) );
 			    image_pub.publish(msg);
 			    c_info.header.seq = pData->frame;
